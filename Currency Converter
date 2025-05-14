@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+void show_menu() {
+    printf("=== Currency Converter ===\n");
+    printf("1. USD to INR\n");
+    printf("2. INR to USD\n");
+    printf("3. EUR to INR\n");
+    printf("4. INR to EUR\n");
+    printf("5. Exit\n");
+    printf("Choose an option: ");
+}
+
+int main() {
+    int choice;
+    float amount, converted;
+
+    do {
+        show_menu();
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter amount in USD: ");
+                scanf("%f", &amount);
+                converted = amount * 83.5; 
+                printf("= %.2f INR\n\n", converted);
+                break;
+
+            case 2:
+                printf("Enter amount in INR: ");
+                scanf("%f", &amount);
+                converted = amount / 83.5; 
+                printf("= %.2f USD\n\n", converted);
+                break;
+
+            case 3:
+                printf("Enter amount in EUR: ");
+                scanf("%f", &amount);
+                converted = amount * 89.7; 
+                printf("= %.2f INR\n\n", converted);
+                break;
+
+            case 4:
+                printf("Enter amount in INR: ");
+                scanf("%f", &amount);
+                converted = amount / 89.7; 
+                printf("= %.2f EUR\n\n", converted);
+                break;
+
+            case 5:
+                printf("Exiting program.\n");
+                break;
+
+            default:
+                printf("Invalid choice. Try again.\n\n");
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
